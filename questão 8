@@ -1,0 +1,22 @@
+// 8. Crie um programa que receba valores para uma matriz 5 x 7 de elementos reais. O programa também
+//deve ler dois números inteiros (Linha e Coluna) e apresentar o valor contido naquela posição da
+//matriz 
+#include <stdio.h>
+#include <stdlib.h>
+int main () {
+    float mat[5][7];
+    int a, b;
+    for (int i=0; i<5; i++){
+        for (int j=0; j<7; j++){
+            mat[i][j] = rand() % 100;
+            mat[i][j]/=10;
+            printf ("%.2f ", mat[i][j]);
+        }
+        printf ("\n");
+    }
+    printf ("informe um número (linha) : ");
+    scanf ("%i", &a);
+    printf ("informe um número (coluna) : ");
+    scanf ("%i", &b);
+    printf ("\n%.2f", mat[a][b]);
+}
