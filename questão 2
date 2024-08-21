@@ -1,0 +1,51 @@
+// 2. Escreva um programa em C que leia elementos reais para uma matriz quadrada de ordem 5. O
+//programa deve conter uma estrutura de caso para apresentar as seguintes opções:
+//a) A soma dos elementos de uma linha informada pelo usuário;
+//b) A soma dos elementos de uma coluna informada pelo usuário;
+//c) A soma da diagonal principal;
+//d) A soma da diagonal secundária;
+//e) A soma de todos os elementos da matriz; 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main () {
+    float mat[5][5];
+    int num, l, c, aux1=0, aux2=4;
+    float somal=0, somac=0, somap=0, somas=0, somam=0;
+    printf ("informe a linha para a soma ser efetuada : ");
+    scanf ("%i", &l);
+    printf ("informe a coluna para a soma ser efetuada : ");
+    scanf ("%i", &c);
+    for (int i=0; i<5; i++){
+        for (int j=0; j<5; j++){
+            mat[i][j] = rand() % 10;
+            if (i==l){
+                somal+=mat[i][j];
+            }
+            if (j==c){
+                somac+=mat[i][j];
+            }
+            if (i==j){
+                somap+=mat[i][j];
+            }
+            somam+=mat[i][j];
+        }
+        if (aux1<5){
+                somas+=mat[aux1][aux2];
+                aux1++;
+                aux2--;
+            }
+    }
+    for (int i=0; i<5; i++){
+        for (int j=0; j<5; j++){
+            printf ("%.2f ", mat[i][j]);
+        }
+        printf ("\n");
+    }
+    printf ("a soma dos elementos da linha informada é : %.2f\n", somal);
+    printf ("a soma dos elementos da coluna informada é : %.2f\n", somac);
+    printf ("a soma dos elementos da diagonal principal é : %.2f\n", somap);
+    printf ("a soma dos elementos da diagonal secundária é : %.2f\n", somas);
+    printf ("a soma dos elementos da matriz é : %.2f\n", somam);
+    
+}
