@@ -1,0 +1,25 @@
+//. Faça um programa para ler dois vetores A e B de 7 elementos cada. Depois construa uma matriz com
+//7 linhas e 2 colunas. A primeira coluna deve ser formada pelos elementos do vetor A e a segunda
+//coluna formada pelos elementos do vetor B. Apresentar a matriz C. 
+#include <stdio.h>
+int main () {
+    int a[7], b[7], c[7][2];
+    printf ("Vetor I\n");
+    for (int i=0; i<7; i++){
+        printf ("%i ) informe um número : ", i+1);
+        scanf ("%i", &a[i]);
+        c[i][0]=a[i];
+    }
+    printf ("Vetor II\n");
+    for (int i=0; i<7; i++){
+        printf ("%i ) informe um número : ", i+1);
+        scanf ("%i", &b[i]);
+        c[i][1]=b[i];
+    }
+    for (int i=0; i<7; i++){
+        for (int j=0; j<2; j++){
+            printf ("%i ", c[i][j]);
+        }
+        printf ("\n");
+    }
+}
