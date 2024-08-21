@@ -1,0 +1,17 @@
+// 7. Crie um algoritmo que preencha os elementos de uma matriz 7 x 8,
+//onde o valor de cada elemento é a soma dos seus índices. 
+#include <stdio.h>
+int main () {
+    int mat[7][8], soma;
+    for (int i=0; i<7; i++){
+        for (int j=0; j<8; j++){
+            mat[i][j]=i+j;
+        }
+    }
+    for (int i=0; i<7; i++){
+        for (int j=0; j<8; j++){
+            printf ("%i ", mat[i][j]);
+        }
+        printf ("\n");
+    }
+}
