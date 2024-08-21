@@ -1,0 +1,27 @@
+//5. Faça um algoritmo que leia uma matriz de inteiros de tamanho 8 x 6. Depois, construir um
+//vetor para armazenar a soma de cada linha da matriz.
+//Ao final apresentar o somatório dos elementos do vetor. 
+#include <stdio.h>
+#include <stdlib.h>
+int main () {
+    int mat[8][6], vet[8], soma=0;
+    for (int i=0; i<8; i++){
+        for (int j=0; j<6; j++){
+            mat[i][j]=rand () % 10;
+        }
+    }
+    for (int i=0; i<8; i++){
+        for (int j=0; j<6; j++){
+            printf ("%i ", mat[i][j]);
+            vet[i]+=mat[i][j];
+        }
+        
+        printf ("\n");
+    }
+    printf ("\n");
+    for (int i=0; i<8; i++){
+        printf ("%i ", vet[i]);
+        soma+=vet[i];
+    }
+    printf ("\na soma dos números é : %i", soma);
+}
