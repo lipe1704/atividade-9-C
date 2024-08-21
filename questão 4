@@ -1,0 +1,93 @@
+// 4. Faça um programa que receba elementos inteiros para uma matriz quadrada de ordem 4, e contenha
+//uma estrutura de caso com as opções abaixo:
+//a) Apresentar a matriz completa;
+//b) Apresentar a diagonal principal;
+//c) Apresentar a diagonal secundária;
+//d) Apresentar os elementos abaixo da diagonal principal;
+//e) Apresentar os elementos acima da diagonal principal; 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main () {
+    int mat[4][4], mataux[4][4];
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            mat[i][j]=rand () % 10;
+            mataux[i][j]=mat[i][j];
+        }
+    }
+    //matriz completa
+    printf ("MATRIZ COMPLETA :\n");
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            printf ("%i ", mat[i][j]);
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+    //diagonal principal
+    printf ("DIAGONAL PRINCIPAL :\n");
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (i!=j){
+                mataux[i][j]=0;
+            }
+            printf ("%i ", mataux[i][j]);
+        }
+        printf ("\n");
+    }
+    //reset
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            mataux[i][j]=mat[i][j];
+        }
+    }
+    printf ("\n");
+    //diagonal secundária
+    printf ("DIAGONAL SECUNDÁRIA :\n");
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (i+j!=3){
+                mataux[i][j]=0;
+            }
+            printf ("%i ", mataux[i][j]);
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+    //reset
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            mataux[i][j]=mat[i][j];
+        }
+    }
+    //abaixo da principal
+    printf ("ABAIXO DA PRINCIPAL :\n");
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (i<=j){
+                mataux[i][j]=0;
+            }
+            printf ("%i ", mataux[i][j]);
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+    //reset
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            mataux[i][j]=mat[i][j];
+        }
+    }
+    //acima da principal
+    printf ("ACIMA DA PRINCIPAL :\n");
+    for (int i=0; i<4; i++){
+        for (int j=0; j<4; j++){
+            if (i>=j){
+                mataux[i][j]=0;
+            }
+            printf ("%i ", mataux[i][j]);
+        }
+        printf ("\n");
+    }
+}
