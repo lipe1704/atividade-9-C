@@ -1,0 +1,32 @@
+// Faça um algoritmo que receba os valores para uma matriz 2 x 3. O programa deve gerar a matriz
+//transposta e apresenta-la na tela. Uma matriz transposta é gerada trocando a linha pela coluna.
+//Exemplo:
+ //Matriz 2 x 3               Matriz transposta
+//    1 9 48                     1  4
+//   4 49 2                     9  49
+//                             48  2
+
+#include <stdio.h>
+int main () {
+    int mat[2][3], mat2[3][2];
+    for (int i=0; i<2; i++){
+        for (int j=0; j<3; j++){
+            printf ("[%i][%i] informe um número : ", i, j);
+            scanf ("%i", &mat[i][j]);
+            mat2[j][i]=mat[i][j];
+        }
+    }
+    for (int i=0; i<2; i++){
+        for (int j=0; j<3; j++){
+            printf ("%i ", mat[i][j]);
+        }
+        printf ("\n");
+    }
+    printf("\n");
+    for (int i=0; i<3; i++){
+        for (int j=0; j<2; j++){
+            printf ("%i ", mat2[i][j]);
+        }
+        printf ("\n");
+    }
+}
